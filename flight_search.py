@@ -28,7 +28,7 @@ class FlightSearch:
             "nights_in_dst_to": 10,
             "flight_type": "round",
             "one_for_city": 1,
-            "max_stopovers": 0,
+            "max_stopovers": 1,
             'adults': 2,
             "curr": "PLN"
         }
