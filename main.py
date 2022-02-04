@@ -5,6 +5,9 @@ from notification_manager import NotificationManager
 
 
 ORIGIN_CITY_IATA = "WAW"
+ADULTS = 2
+CHILDREN = 0
+INFANTS = 0
 
 data_manager = DataManager()
 flight_search = FlightSearch()
@@ -51,6 +54,6 @@ for destination_code in destinations:
             message += f"\nLot ma {flight.stop_overs} przesiadki w {flight.via_city}."
 
         link = f"www.kiwi.com/deep?affilid=jakubsokalskiflighttracker&currency=PLN&destination={flight.destination_airport}&lang=pl&origin={flight.origin_airport}" \
-               f"&return=anytime&returnFromDifferentAirport=false&returnToDifferentAirport=false&adults=2&children=0&infants=0"
+               f"&return=anytime&returnFromDifferentAirport=false&returnToDifferentAirport=false&adults={ADULTS}&children={CHILDREN}&infants={INFANTS}"
         notification_manager.send_emails(emails, message, link)
 
