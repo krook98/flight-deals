@@ -24,11 +24,12 @@ class FlightSearch:
             "fly_to": destination_city_code,
             "date_from": from_time.strftime("%d/%m/%Y"),
             "date_to": to_time.strftime("%d/%m/%Y"),
-            "nights_in_dst_from": 7,
-            "nights_in_dst_to": 28,
+            "nights_in_dst_from": 2,
+            "nights_in_dst_to": 10,
             "flight_type": "round",
             "one_for_city": 1,
             "max_stopovers": 0,
+            'adults': 2,
             "curr": "PLN"
         }
 
@@ -45,6 +46,7 @@ class FlightSearch:
         except IndexError:
             print(f"Brak lotów dla {destination_city_code}.")
             return None
+        print(data)
 
         flight_data = FlightData(
             price=data["price"],
@@ -57,4 +59,5 @@ class FlightSearch:
         )
         print(f"{flight_data.destination_city}: {flight_data.price} PLN")
         return flight_data
+
 

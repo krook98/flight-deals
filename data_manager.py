@@ -25,3 +25,9 @@ class DataManager:
             )
             print(response.text)
 
+    def get_customer_emails(self):
+        response = requests.get(url=os.environ.get('SHEETY_USERS'))
+        data = response.json()
+        self.customer_data = data['users']
+        return self.customer_data
+
